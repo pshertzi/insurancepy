@@ -1,47 +1,16 @@
-age = 28
-
-sex = 0
-
-bmi = 26.2
-
-num_of_children = 3
-
-smoker = 0
+# Calculated insurance function
+def calculate_insurance_cost(name, age, sex, bmi, num_of_children, smoker):
+  estimated_cost = 250*age - 128*sex + 370*bmi + 425*num_of_children + 24000*smoker - 12500
+  print("The estimated insurance cost for " + str(name) + " is " + str(estimated_cost) + " dollars")
+  return estimated_cost
 
 
-insurance_cost = 250 * age - 128 * sex + 370 * bmi + 425 * num_of_children + 24000 * smoker -12500
+# Estimate Maria's insurance cost
+maria_insurance_cost = calculate_insurance_cost(name = "maria", age = 28, sex = 0, bmi = 26.2, num_of_children = 3, smoker = 0)
 
 
-print("This person's insurance cost is " + str(insurance_cost) + " dollars.")
+# Estimate Omar's insurance cost
+omar_insurance_cost = calculate_insurance_cost(name = "omar", age = 35, sex = 1, bmi = 22.2, num_of_children = 0, smoker = 1)
 
-age += 4
-
-new_insurance_cost = 250 * age - 128 * sex + 370 * bmi + 425 * num_of_children + 24000 * smoker -12500
-
-
-change_in_insurance_cost = new_insurance_cost - insurance_cost
-
-print("The change in estimated insurance cost after increasing the age by 4 years is " + str(change_in_insurance_cost) + " dollars")
-
-age = 28
-
-bmi += 3.1
-
-new_insurance_cost = 250 * age - 128 * sex + 370 * bmi + 425 * num_of_children + 24000 * smoker -12500
-
-change_in_insurance_cost = new_insurance_cost - insurance_cost
-
-print("The change in estimated insurance cost after increasing BMI by 3.1 is " + str(change_in_insurance_cost) + " dollars")
-
-
-bmi -= 3.1
-
-sex += 1
-
-new_insurance_cost = 250 * age - 128 * sex + 370 * bmi + 425 * num_of_children + 24000 * smoker -12500
-
-change_in_insurance_cost = new_insurance_cost - insurance_cost
-
-print("The change in estimated insurance cost after being male is " + str(change_in_insurance_cost) + " dollars")
-
-
+# My insurance cost 
+my_insurance_cost = calculate_insurance_cost(name="paul", age=29, sex=1, bmi=29, num_of_children=0, smoker=1)
